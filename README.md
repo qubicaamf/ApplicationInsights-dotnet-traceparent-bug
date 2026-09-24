@@ -1,0 +1,1 @@
+# ApplicationInsights-dotnet-traceparent-bug
