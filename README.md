@@ -18,5 +18,5 @@ Run `frameworkApp-Sdk.exe` without arguments. It starts `server 1` on port 8017 
 
 Use the control case to skip the pre-DI call and see that the traceparent apparing from the start on both servers, instead of only the second:
 
-    frameworkApp-Sdk.exe --client --skip-initial-call
+    frameworkApp-Sdk.exe --skip-initial-call
 
