@@ -1,6 +1,6 @@
 # Application Insights traceparent bug reproducer
 
-This repository is a local reproducer for a traceparent propagation issue in the Microsoft Application Insights telemetry SDK. It configures the public Application Insights SDK and dependency collector directly; no internal telemetry package is required.
+This repository is a local reproducer for a traceparent propagation issue in the Microsoft Application Insights telemetry SDK.
 
 ## Expected behavior
 
