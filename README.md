@@ -6,6 +6,10 @@ This repository is a local reproducer for a traceparent propagation issue in the
 
 After dependency injection configures the HTTP client, every health request should include a W3C `traceparent` header. Both servers print the received value.
 
+## Actual behavior
+
+Calls made to a server do not receive the traceparent header if that server had an existing connection before the telemetry SDK was initialized
+
 ## Reproduce
 
 Run `frameworkApp-Sdk.exe` without arguments. It starts `server 1` on port 8017 and `server 2` on port 8018, makes one health call to `server 1` before DI, then configures DI and makes three calls to each server at five-second intervals. After the third cycle, the interval changes to two minutes. This delay is intentional: it allows the problematic server connection to reach its idle timeout. Once that connection is closed rather than reused, the traceparent issue disappears. Server output is labeled with its server identifier.
