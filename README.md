@@ -12,13 +12,7 @@ Run `frameworkApp-Sdk.exe` without arguments. It starts `server 1` on port 8017 
 
     frameworkApp-Sdk.exe
 
-Use the control case to skip the pre-DI call:
+Use the control case to skip the pre-DI call and see that the traceparent apparing from the start on both servers, instead of only the second:
 
     frameworkApp-Sdk.exe --client --skip-initial-call
 
-A separately started server can be targeted with:
-
-    frameworkApp-Sdk.exe --server --port 9001
-    frameworkApp-Sdk.exe --client --endpoint1 http://localhost:9001/healthprobe --endpoint2 http://localhost:8018/healthprobe
-
-The Application Insights connection string and dependency tracking options are hardcoded in the SDK registration so the repro has no configuration pass-through.
